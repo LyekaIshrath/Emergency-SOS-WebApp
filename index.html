@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency SOS App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Emergency SOS</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#dc2626">
 </head>
+
 <body>
 
 <div class="app-background">
-    <div class="bg-art side-left"></div>
-    <div class="bg-art side-right"></div>
 
-    <div class="container">
-        <div class="header">
-            <div class="siren-icon">🚨</div>
-            <h1>EMERGENCY</h1>
-            <h2>SOS APP</h2>
-            <p class="tagline">Your Safety, Our Priority</p>
-        </div>
+<div class="container">
 
-        <div class="sos-section">
-            <button class="btn-sos" onclick="getLocation()">
-                <i class="fa-solid fa-bell"></i> SOS BUTTON
-            </button>
-            <div class="instruction-box">
-                <p id="output">Press SOS button in emergency.</p>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <div class="contact-form-section">
-            <h3 class="section-title"><i class="fa-solid fa-users"></i> EMERGENCY CONTACTS</h3>
-            
-            <div class="input-group">
-                <i class="fa-solid fa-user input-icon"></i>
-                <input type="text" id="name" placeholder="Contact Name">
-            </div>
-            
-            <div class="input-group">
-                <i class="fa-solid fa-phone input-icon"></i>
-                <input type="text" id="phone" placeholder="Phone Number (with country code)">
-            </div>
-
-            <button class="btn-save" onclick="saveContact()">
-                <i class="fa-solid fa-floppy-disk"></i> SAVE CONTACT
-            </button>
-            <p id="saved" class="status-msg"></p>
-        </div>
-
-        <div class="saved-section">
-            <h3 class="section-title text-red"><i class="fa-solid fa-list-ul"></i> SAVED CONTACTS</h3>
-            <div id="contactList"></div>
-        </div>
-
-        <div class="footer-banner">
-            <i class="fa-solid fa-shield-halved"></i> Stay safe. We are always with you.
-        </div>
+    <div class="header">
+        <div class="siren-icon">🚨</div>
+        <h1>SMART</h1>
+        <h2>EMERGENCY SOS</h2>
+        <p class="tagline">Instant emergency alert system</p>
     </div>
+
+    <button class="btn-sos" onclick="triggerSOS('whatsapp')">
+        🚨 ACTIVATE SOS
+    </button>
+
+    <div id="countdownBox" class="sos-countdown-container" style="display:none;">
+        <h3>🚨 Sending SOS in <span id="timer">5</span> seconds</h3>
+        <button onclick="cancelSOS()" class="btn-delete">Cancel SOS</button>
+    </div>
+
+    <div class="sos-options">
+
+        <button class="btn-save" onclick="triggerSOS('whatsapp')">
+            💬 Send SOS via WhatsApp
+        </button>
+
+        <button class="btn-save" onclick="triggerSOS('sms')">
+            📩 Send SOS via SMS
+        </button>
+
+    </div>
+
+    <hr class="divider">
+
+    <input id="name" placeholder="Contact Name" class="input-box">
+    <input id="phone" placeholder="Phone Number" class="input-box">
+
+    <button class="btn-save" onclick="saveContact()">Save Contact</button>
+
+    <div id="contactList"></div>
+
+    <button id="installBtn" class="btn-install" style="display:none;">
+        📲 Install App
+    </button>
+
+</div>
+
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,339 +1,95 @@
-/* Base Reset & Dramatic Dark Theme Background 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0b0202;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: #333;
-    overflow-x: hidden;
-}*/
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    /* 🚨 Emergency background image */
-    background: url("https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80")
-    no-repeat center center/cover;
-
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+body{
+    margin:0;
+    font-family:Arial;
 }
 
-/* Fullscreen Layout Wrapper featuring the Image Assets 
-.app-background {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    background: radial-gradient(circle at center, transparent 30%, #050101 90%);
-}*/
+/* 🚨 PANIC / EMERGENCY BACKGROUND IMAGE */
+.app-background{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-.app-background {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background:
+    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1603386329225-868f9b1ee6a2?auto=format&fit=crop&w=1600&q=80");
 
-    /* dark overlay so text is visible */
-    background: rgba(0, 0, 0, 0.65);
-    padding: 20px;
-}
-/* Dynamic Grungy Left/Right Graphics mapped from your UI Image */
-.bg-art {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 35%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.75;
-}
-.side-left {
-    left: 0;
-    background-image: linear-gradient(to right, rgba(11,2,2,0), #0b0202), url('1000110847.png');
-    background-position: left center;
-}
-.side-right {
-    right: 0;
-    background-image: linear-gradient(to left, rgba(11,2,2,0), #0b0202), url('1000110847.png');
-    background-position: right center;
+    background-size:cover;
+    background-position:center;
 }
 
-/* Centralized Translucent Card Module matching the exact Mockup UI */
-.container {
-    position: relative;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.96);
-    width: 100%;
-    max-width: 440px;
-    padding: 30px 24px;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(214, 28, 28, 0.15);
-    text-align: center;
-    box-sizing: border-box;
+.container{
+    width:90%;
+    max-width:420px;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
 }
 
-/* Typography Header Matrix */
-.header .siren-icon {
-    font-size: 32px;
-    animation: pulse 1.5s infinite;
-}
-.header h1 {
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin: 10px 0 0px 0;
-    color: #111;
-}
-.header h2 {
-    font-size: 32px;
-    font-weight: 800;
-    color: #dc2626;
-    margin: 0 0 5px 0;
-    letter-spacing: 0.5px;
-}
-.header .tagline {
-    font-size: 14px;
-    font-weight: 600;
-    color: #4b5563;
-    margin: 0 0 25px 0;
+/* rest stays SAME */
+.siren-icon{font-size:40px;animation:pulse 1.5s infinite;}
+.btn-sos{width:100%;padding:15px;background:red;color:white;border:none;font-size:18px;margin-top:10px;}
+.btn-save{width:100%;padding:12px;background:green;color:white;border:none;margin-top:10px;}
+
+.sos-options{
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
-/* Primary SOS Interactive Controls */
-.btn-sos {
-    background: #dc2626;
-    color: white;
-    padding: 14px;
-    width: 100%;
-    border: none;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
-    transition: background 0.2s, transform 0.1s;
-}
-.btn-sos:hover {
-    background: #b91c1c;
-}
-.btn-sos:active {
-    transform: scale(0.99);
+.input-box{
+    width:100%;
+    max-width:320px;   /* ✅ limits width (clean range) */
+    margin:10px auto;  /* center alignment */
+
+    display:block;
+
+    padding:12px 14px;
+
+    border:1px solid #d1d5db;
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+    background:#fff;
+
+    transition:0.3s ease;
 }
 
-.instruction-box {
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 12px;
-    margin: 12px 0 20px 0;
-}
-.instruction-box p {
-    margin: 0;
-    font-size: 13px;
-    color: #4b5563;
-    font-weight: 500;
+/* focus effect */
+.input-box:focus{
+    border-color:#dc2626;
+    box-shadow:0 0 0 3px rgba(220,38,38,0.15);
 }
 
-.divider {
-    border: 0;
-    height: 1px;
-    background: #e5e7eb;
-    margin: 20px 0;
+.sos-countdown-container{
+    margin-top:15px;
+    padding:15px;
+    border:2px solid red;
+    background:#fff5f5;
 }
 
-/* Input Management & Architecture */
-.section-title {
-    font-size: 13px;
-    font-weight: 700;
-    text-align: left;
-    color: #1f2937;
-    margin: 0 0 12px 2px;
-    letter-spacing: 0.3px;
-}
-.text-red {
-    color: #dc2626 !important;
+.btn-delete{
+    background:black;
+    color:white;
+    padding:8px;
+    border:none;
 }
 
-.input-group {
-    position: relative;
-    margin-bottom: 10px;
-}
-.input-icon {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #9ca3af;
-    font-size: 14px;
-}
-.input-group input {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border-radius: 10px;
-    border: 1px solid #d1d5db;
-    background-color: #fff;
-    font-size: 14px;
-    color: #1f2937;
-    box-sizing: border-box;
-}
-.input-group input::placeholder {
-    color: #9ca3af;
+.btn-install{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
 }
 
-.btn-save {
-    background: #166534;
-    color: white;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    font-size: 14px;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 5px;
-    transition: background 0.2s;
-}
-.btn-save:hover {
-    background: #15803d;
-}
-
-/* Contact List Rendering Template */
-.contact-item {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border: 1px solid #edf2f7;
-    border-radius: 12px;
-    padding: 12px;
-    margin-top: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-.contact-avatar {
-    background: #ef4444;
-    color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
-.contact-details {
-    text-align: left;
-    flex-grow: 1;
-}
-.contact-details .c-name {
-    font-weight: 700;
-    font-size: 14px;
-    color: #1a202c;
-    margin: 0;
-}
-.contact-details .c-phone {
-    font-size: 12px;
-    color: #718096;
-    margin: 2px 0 0 0;
-}
-.contact-actions {
-    display: flex;
-    gap: 6px;
-}
-.btn-edit, .btn-delete {
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: none;
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-.btn-edit { background: #2563eb; }
-.btn-edit:hover { background: #1d4ed8; }
-.btn-delete { background: #dc2626; }
-.btn-delete:hover { background: #b91c1c; }
-
-/* Status Text and Alert Modules */
-.status-msg {
-    font-size: 12px;
-    color: #16a34a;
-    font-weight: 600;
-    margin: 5px 0 0 0;
-}
-.sos-countdown-container {
-    padding: 5px;
-}
-.sos-countdown-container h3 {
-    color: #b91c1c;
-    margin: 0 0 10px 0;
-    font-size: 15px;
-}
-.sos-links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-}
-.sos-link {
-    display: block;
-    padding: 10px;
-    border-radius: 8px;
-    color: white !important;
-    font-size: 13px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: opacity 0.2s;
-}
-.sos-link.loc { background: #4b5563; }
-.sos-link.wa { background: #25d366; }
-.sos-link.sms { background: #0284c7; }
-.sos-link:hover { opacity: 0.9; }
-
-/* Bottom Security Disclaimer Tag */
-.footer-banner {
-    background: #fef2f2;
-    border: 1px solid #fee2e2;
-    border-radius: 12px;
-    padding: 12px;
-    color: #b91c1c;
-    font-size: 13px;
-    font-weight: 700;
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Responsive Handling */
-@media (max-width: 768px) {
-    .bg-art { display: none; }
-    body { background: #070101; }
-    .app-background { background: none; padding: 15px 10px; }
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
 }
